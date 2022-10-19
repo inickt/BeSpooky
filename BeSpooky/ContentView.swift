@@ -5,17 +5,21 @@
 //  Created by Nick Thompson on 10/18/22.
 //
 
+import MultipeerKit
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, world!")
-            .padding()
-    }
-}
+    @EnvironmentObject var store: Store
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    var body: some View {
+        VStack {
+            Text(store.text)
+            Button(action: {
+                store.transceiver.broadcast(Payload(value: "Foobar"))
+            }) {
+                Text("SEND")
+            }
+        }
+        .padding()
     }
 }

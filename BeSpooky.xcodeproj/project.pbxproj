@@ -11,6 +11,9 @@
 		010875EC28FFA3150055DCD8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010875EB28FFA3150055DCD8 /* ContentView.swift */; };
 		010875EE28FFA3160055DCD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 010875ED28FFA3160055DCD8 /* Assets.xcassets */; };
 		010875F128FFA3160055DCD8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 010875F028FFA3160055DCD8 /* Preview Assets.xcassets */; };
+		010875F928FFA4690055DCD8 /* MultipeerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 010875F828FFA4690055DCD8 /* MultipeerKit */; };
+		010875FC28FFA8C70055DCD8 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010875FB28FFA8C70055DCD8 /* Payload.swift */; };
+		010875FE28FFAB620055DCD8 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010875FD28FFAB620055DCD8 /* Store.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		010875EB28FFA3150055DCD8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		010875ED28FFA3160055DCD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		010875F028FFA3160055DCD8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		010875FA28FFA7CF0055DCD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		010875FB28FFA8C70055DCD8 /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
+		010875FD28FFAB620055DCD8 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				010875F928FFA4690055DCD8 /* MultipeerKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,10 +58,13 @@
 		010875E828FFA3150055DCD8 /* BeSpooky */ = {
 			isa = PBXGroup;
 			children = (
+				010875FA28FFA7CF0055DCD8 /* Info.plist */,
 				010875E928FFA3150055DCD8 /* BeSpookyApp.swift */,
 				010875EB28FFA3150055DCD8 /* ContentView.swift */,
 				010875ED28FFA3160055DCD8 /* Assets.xcassets */,
 				010875EF28FFA3160055DCD8 /* Preview Content */,
+				010875FB28FFA8C70055DCD8 /* Payload.swift */,
+				010875FD28FFAB620055DCD8 /* Store.swift */,
 			);
 			path = BeSpooky;
 			sourceTree = "<group>";
@@ -83,6 +93,9 @@
 			dependencies = (
 			);
 			name = BeSpooky;
+			packageProductDependencies = (
+				010875F828FFA4690055DCD8 /* MultipeerKit */,
+			);
 			productName = BeSpooky;
 			productReference = 010875E628FFA3150055DCD8 /* BeSpooky.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +124,9 @@
 				Base,
 			);
 			mainGroup = 010875DD28FFA3150055DCD8;
+			packageReferences = (
+				010875F728FFA4690055DCD8 /* XCRemoteSwiftPackageReference "MultipeerKit" */,
+			);
 			productRefGroup = 010875E728FFA3150055DCD8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +153,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				010875FC28FFA8C70055DCD8 /* Payload.swift in Sources */,
 				010875EC28FFA3150055DCD8 /* ContentView.swift in Sources */,
 				010875EA28FFA3150055DCD8 /* BeSpookyApp.swift in Sources */,
+				010875FE28FFAB620055DCD8 /* Store.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,11 +288,14 @@
 				DEVELOPMENT_TEAM = 8SQNZE245D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BeSpooky/Info.plist;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Uses the network to communicate with other devices.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -299,11 +320,14 @@
 				DEVELOPMENT_TEAM = 8SQNZE245D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BeSpooky/Info.plist;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Uses the network to communicate with other devices.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,6 +363,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		010875F728FFA4690055DCD8 /* XCRemoteSwiftPackageReference "MultipeerKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/insidegui/MultipeerKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		010875F828FFA4690055DCD8 /* MultipeerKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 010875F728FFA4690055DCD8 /* XCRemoteSwiftPackageReference "MultipeerKit" */;
+			productName = MultipeerKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 010875DE28FFA3150055DCD8 /* Project object */;
 }
