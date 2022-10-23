@@ -22,6 +22,7 @@
 		0108760A2904E6370055DCD8 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010876092904E6370055DCD8 /* UINavigationController+Extensions.swift */; };
 		0108760C2904EBDA0055DCD8 /* UIViewConrtoller+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0108760B2904EBDA0055DCD8 /* UIViewConrtoller+Extensions.swift */; };
 		0108760E290508FC0055DCD8 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0108760D290508FC0055DCD8 /* UIApplication+Extensions.swift */; };
+		0108761229057B000055DCD8 /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0108761129057B000055DCD8 /* NSObject+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +31,7 @@
 		010875EB28FFA3150055DCD8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		010875ED28FFA3160055DCD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		010875F028FFA3160055DCD8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		010875FA28FFA7CF0055DCD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		010875FA28FFA7CF0055DCD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		010875FB28FFA8C70055DCD8 /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
 		010875FD28FFAB620055DCD8 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		010875FF29023C740055DCD8 /* CameraCaptureStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureStore.swift; sourceTree = "<group>"; };
@@ -41,6 +42,7 @@
 		010876092904E6370055DCD8 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
 		0108760B2904EBDA0055DCD8 /* UIViewConrtoller+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewConrtoller+Extensions.swift"; sourceTree = "<group>"; };
 		0108760D290508FC0055DCD8 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		0108761129057B000055DCD8 /* NSObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,21 +76,17 @@
 		010875E828FFA3150055DCD8 /* BeSpooky */ = {
 			isa = PBXGroup;
 			children = (
-				010875FA28FFA7CF0055DCD8 /* Info.plist */,
+				0108761029057ADA0055DCD8 /* Extensions */,
+				0108760F29057ACB0055DCD8 /* Resources */,
 				010875E928FFA3150055DCD8 /* BeSpookyApp.swift */,
-				010875EB28FFA3150055DCD8 /* ContentView.swift */,
-				010875ED28FFA3160055DCD8 /* Assets.xcassets */,
-				010875EF28FFA3160055DCD8 /* Preview Content */,
-				010875FB28FFA8C70055DCD8 /* Payload.swift */,
-				010875FD28FFAB620055DCD8 /* Store.swift */,
 				010875FF29023C740055DCD8 /* CameraCaptureStore.swift */,
-				010876012904DEF90055DCD8 /* RoleSelectionView.swift */,
-				010876032904E28F0055DCD8 /* RemoteView.swift */,
+				010875EB28FFA3150055DCD8 /* ContentView.swift */,
 				010876052904E4BD0055DCD8 /* FrontPreviewView.swift */,
+				010875FB28FFA8C70055DCD8 /* Payload.swift */,
 				010876072904E4C70055DCD8 /* RearCameraView.swift */,
-				010876092904E6370055DCD8 /* UINavigationController+Extensions.swift */,
-				0108760B2904EBDA0055DCD8 /* UIViewConrtoller+Extensions.swift */,
-				0108760D290508FC0055DCD8 /* UIApplication+Extensions.swift */,
+				010876032904E28F0055DCD8 /* RemoteView.swift */,
+				010876012904DEF90055DCD8 /* RoleSelectionView.swift */,
+				010875FD28FFAB620055DCD8 /* Store.swift */,
 			);
 			path = BeSpooky;
 			sourceTree = "<group>";
@@ -99,6 +97,27 @@
 				010875F028FFA3160055DCD8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0108760F29057ACB0055DCD8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				010875FA28FFA7CF0055DCD8 /* Info.plist */,
+				010875ED28FFA3160055DCD8 /* Assets.xcassets */,
+				010875EF28FFA3160055DCD8 /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0108761029057ADA0055DCD8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0108761129057B000055DCD8 /* NSObject+Extensions.swift */,
+				0108760D290508FC0055DCD8 /* UIApplication+Extensions.swift */,
+				010876092904E6370055DCD8 /* UINavigationController+Extensions.swift */,
+				0108760B2904EBDA0055DCD8 /* UIViewConrtoller+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +208,7 @@
 				0108760029023C740055DCD8 /* CameraCaptureStore.swift in Sources */,
 				010876082904E4C70055DCD8 /* RearCameraView.swift in Sources */,
 				010876062904E4BD0055DCD8 /* FrontPreviewView.swift in Sources */,
+				0108761229057B000055DCD8 /* NSObject+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
