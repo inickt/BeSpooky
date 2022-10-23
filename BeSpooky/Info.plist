@@ -6,5 +6,7 @@
 	<array>
 		<string>_BeSpooky._tcp</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>

@@ -15,6 +15,13 @@
 		010875FC28FFA8C70055DCD8 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010875FB28FFA8C70055DCD8 /* Payload.swift */; };
 		010875FE28FFAB620055DCD8 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010875FD28FFAB620055DCD8 /* Store.swift */; };
 		0108760029023C740055DCD8 /* CameraCaptureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010875FF29023C740055DCD8 /* CameraCaptureStore.swift */; };
+		010876022904DEF90055DCD8 /* RoleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010876012904DEF90055DCD8 /* RoleSelectionView.swift */; };
+		010876042904E28F0055DCD8 /* RemoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010876032904E28F0055DCD8 /* RemoteView.swift */; };
+		010876062904E4BD0055DCD8 /* FrontPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010876052904E4BD0055DCD8 /* FrontPreviewView.swift */; };
+		010876082904E4C70055DCD8 /* RearCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010876072904E4C70055DCD8 /* RearCameraView.swift */; };
+		0108760A2904E6370055DCD8 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010876092904E6370055DCD8 /* UINavigationController+Extensions.swift */; };
+		0108760C2904EBDA0055DCD8 /* UIViewConrtoller+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0108760B2904EBDA0055DCD8 /* UIViewConrtoller+Extensions.swift */; };
+		0108760E290508FC0055DCD8 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0108760D290508FC0055DCD8 /* UIApplication+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +34,13 @@
 		010875FB28FFA8C70055DCD8 /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
 		010875FD28FFAB620055DCD8 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		010875FF29023C740055DCD8 /* CameraCaptureStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureStore.swift; sourceTree = "<group>"; };
+		010876012904DEF90055DCD8 /* RoleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleSelectionView.swift; sourceTree = "<group>"; };
+		010876032904E28F0055DCD8 /* RemoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteView.swift; sourceTree = "<group>"; };
+		010876052904E4BD0055DCD8 /* FrontPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPreviewView.swift; sourceTree = "<group>"; };
+		010876072904E4C70055DCD8 /* RearCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RearCameraView.swift; sourceTree = "<group>"; };
+		010876092904E6370055DCD8 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
+		0108760B2904EBDA0055DCD8 /* UIViewConrtoller+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewConrtoller+Extensions.swift"; sourceTree = "<group>"; };
+		0108760D290508FC0055DCD8 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +82,13 @@
 				010875FB28FFA8C70055DCD8 /* Payload.swift */,
 				010875FD28FFAB620055DCD8 /* Store.swift */,
 				010875FF29023C740055DCD8 /* CameraCaptureStore.swift */,
+				010876012904DEF90055DCD8 /* RoleSelectionView.swift */,
+				010876032904E28F0055DCD8 /* RemoteView.swift */,
+				010876052904E4BD0055DCD8 /* FrontPreviewView.swift */,
+				010876072904E4C70055DCD8 /* RearCameraView.swift */,
+				010876092904E6370055DCD8 /* UINavigationController+Extensions.swift */,
+				0108760B2904EBDA0055DCD8 /* UIViewConrtoller+Extensions.swift */,
+				0108760D290508FC0055DCD8 /* UIApplication+Extensions.swift */,
 			);
 			path = BeSpooky;
 			sourceTree = "<group>";
@@ -156,11 +177,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				010876022904DEF90055DCD8 /* RoleSelectionView.swift in Sources */,
+				0108760C2904EBDA0055DCD8 /* UIViewConrtoller+Extensions.swift in Sources */,
+				0108760E290508FC0055DCD8 /* UIApplication+Extensions.swift in Sources */,
+				010876042904E28F0055DCD8 /* RemoteView.swift in Sources */,
 				010875FC28FFA8C70055DCD8 /* Payload.swift in Sources */,
+				0108760A2904E6370055DCD8 /* UINavigationController+Extensions.swift in Sources */,
 				010875EC28FFA3150055DCD8 /* ContentView.swift in Sources */,
 				010875EA28FFA3150055DCD8 /* BeSpookyApp.swift in Sources */,
 				010875FE28FFAB620055DCD8 /* Store.swift in Sources */,
 				0108760029023C740055DCD8 /* CameraCaptureStore.swift in Sources */,
+				010876082904E4C70055DCD8 /* RearCameraView.swift in Sources */,
+				010876062904E4BD0055DCD8 /* FrontPreviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +326,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
@@ -331,6 +360,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.7;

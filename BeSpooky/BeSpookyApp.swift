@@ -14,7 +14,10 @@ struct BeSpookyApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(store)
+            RoleSelectionView()
+                .onAppear {
+                    UIViewController.swizzleHomeIndicatorProperty()
+                }
         }
     }
 }
