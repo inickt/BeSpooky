@@ -8,5 +8,5 @@
 import Foundation
 
 struct Payload: Codable {
-    let value: String
+    let frame: Data
 }

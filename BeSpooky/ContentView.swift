@@ -10,14 +10,17 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var store: Store
+    @State var capture: CameraCaptureStore?
 
     var body: some View {
         VStack {
-            Text(store.text)
+            if let image = store.image {
+                Image(uiImage: image)
+            }
             Button(action: {
-                store.transceiver.broadcast(Payload(value: "Foobar"))
+                capture = CameraCaptureStore(transceiver: store.transceiver)
             }) {
-                Text("SEND")
+                Text("Capture image")
             }
         }
         .padding()
