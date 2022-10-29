@@ -16,3 +16,10 @@ enum Source: Codable, Equatable {
     case front
     case rear
 }
+
+struct TakePicture: Codable { }
+
+struct PhotoCapture: Codable {
+    let source: Source
+    let photo: Data
+}

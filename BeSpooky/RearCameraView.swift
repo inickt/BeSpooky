@@ -8,15 +8,12 @@
 import SwiftUI
 
 struct RearCameraView: View {
-    @EnvironmentObject private var store: TransceiverStore
-    @State private var captureStore: CameraCaptureStore?
-
+    @StateObject private var store = CameraCaptureStore(source: .rear)
     @State private var originalBrightness: CGFloat = UIScreen.main.brightness
 
     var body: some View {
-        Text("hello")
+        Text("")
             .onAppear {
-                captureStore = .init(transceiver: store.transceiver, source: .rear)
                 UIApplication.shared.isIdleTimerDisabled = true
                 UIScreen.main.brightness = .zero
             }

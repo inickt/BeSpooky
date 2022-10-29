@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    file_names = sorted(os.listdir('static/images'))
+    file_names = sorted(os.listdir('static/images'), reverse=True)
     result = defaultdict(list)
     for file in file_names:
         number = file.partition('-')[0]
@@ -16,11 +16,12 @@ def home():
             result[number].append(file)
 
     images = [images for images in result.values() if len(images) == 2]
-    return render_template('index.html', images=result.values())
+    return render_template('index.html', images=images)
 
 @app.route("/upload", methods=["POST"])
 def upload():
-    main, preview = request.files.getlist("images")
+    main = request.files['main']
+    preview = request.files['preview']
     prefix = str(int(time.time())) + '-'
     main.save(os.path.join("static/images", prefix + 'main' + os.path.splitext(main.filename)[1]))
     preview.save(os.path.join("static/images", prefix + 'preview' + os.path.splitext(preview.filename)[1]))

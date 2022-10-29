@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct FrontPreviewView: View {
-    @EnvironmentObject private var store: TransceiverStore
-    @State private var captureStore: CameraCaptureStore?
+    @StateObject private var store = CameraCaptureStore(source: .front)
 
     var body: some View {
         ZStack {
@@ -24,7 +23,6 @@ struct FrontPreviewView: View {
         .navigationBarHidden(true)
         .statusBar(hidden: true)
         .onAppear {
-            captureStore = .init(transceiver: store.transceiver, source: .front)
             UIApplication.shared.isIdleTimerDisabled = true
             UIApplication.shared.isStatusBarHiddenHack = true
         }
