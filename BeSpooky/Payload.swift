@@ -8,5 +8,11 @@
 import Foundation
 
 struct Payload: Codable {
+    let source: Source
     let frame: Data
+}
+
+enum Source: Codable, Equatable {
+    case front
+    case rear
 }

@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct RemoteView: View {
-
-    let one = Color.red
-    let two = Color.orange
+    @EnvironmentObject var store: TransceiverStore
 
     @State private var flipped = false
     @State private var leading = true
@@ -24,9 +22,8 @@ struct RemoteView: View {
 
             GeometryReader { geometry in
                 ZStack(alignment: leading ? .topLeading : .topTrailing) {
-                    (flipped ? two : one)
-
-                    (flipped ? one : two)
+                    mainView
+                    previewView
                         .aspectRatio(3/4, contentMode: .fit)
                         .frame(width: geometry.size.width * 0.3)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
@@ -62,5 +59,41 @@ struct RemoteView: View {
             }
         }
         .navigationBarHidden(true)
+    }
+
+    @ViewBuilder private var mainView: some View {
+        if flipped {
+            secondaryView
+        } else {
+            primaryView
+        }
+    }
+
+    @ViewBuilder private var previewView: some View {
+        if flipped {
+            primaryView
+        } else {
+            secondaryView
+        }
+    }
+
+    @ViewBuilder private var primaryView: some View {
+        if let image = store.rearImage {
+            Image(uiImage: image)
+                .resizable()
+                .scaledToFill()
+        } else {
+            Color.red
+        }
+    }
+
+    @ViewBuilder private var secondaryView: some View {
+        if let image = store.frontImage {
+            Image(uiImage: image)
+                .resizable()
+                .scaledToFill()
+        } else {
+            Color.orange
+        }
     }
 }

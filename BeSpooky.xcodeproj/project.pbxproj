@@ -13,7 +13,7 @@
 		010875F128FFA3160055DCD8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 010875F028FFA3160055DCD8 /* Preview Assets.xcassets */; };
 		010875F928FFA4690055DCD8 /* MultipeerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 010875F828FFA4690055DCD8 /* MultipeerKit */; };
 		010875FC28FFA8C70055DCD8 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010875FB28FFA8C70055DCD8 /* Payload.swift */; };
-		010875FE28FFAB620055DCD8 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010875FD28FFAB620055DCD8 /* Store.swift */; };
+		010875FE28FFAB620055DCD8 /* TransceiverStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010875FD28FFAB620055DCD8 /* TransceiverStore.swift */; };
 		0108760029023C740055DCD8 /* CameraCaptureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010875FF29023C740055DCD8 /* CameraCaptureStore.swift */; };
 		010876022904DEF90055DCD8 /* RoleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010876012904DEF90055DCD8 /* RoleSelectionView.swift */; };
 		010876042904E28F0055DCD8 /* RemoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010876032904E28F0055DCD8 /* RemoteView.swift */; };
@@ -23,6 +23,7 @@
 		0108760C2904EBDA0055DCD8 /* UIViewConrtoller+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0108760B2904EBDA0055DCD8 /* UIViewConrtoller+Extensions.swift */; };
 		0108760E290508FC0055DCD8 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0108760D290508FC0055DCD8 /* UIApplication+Extensions.swift */; };
 		0108761229057B000055DCD8 /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0108761129057B000055DCD8 /* NSObject+Extensions.swift */; };
+		01087614290CB1830055DCD8 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01087613290CB1830055DCD8 /* Role.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +34,7 @@
 		010875F028FFA3160055DCD8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		010875FA28FFA7CF0055DCD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		010875FB28FFA8C70055DCD8 /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
-		010875FD28FFAB620055DCD8 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		010875FD28FFAB620055DCD8 /* TransceiverStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransceiverStore.swift; sourceTree = "<group>"; };
 		010875FF29023C740055DCD8 /* CameraCaptureStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureStore.swift; sourceTree = "<group>"; };
 		010876012904DEF90055DCD8 /* RoleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleSelectionView.swift; sourceTree = "<group>"; };
 		010876032904E28F0055DCD8 /* RemoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteView.swift; sourceTree = "<group>"; };
@@ -43,6 +44,7 @@
 		0108760B2904EBDA0055DCD8 /* UIViewConrtoller+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewConrtoller+Extensions.swift"; sourceTree = "<group>"; };
 		0108760D290508FC0055DCD8 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		0108761129057B000055DCD8 /* NSObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
+		01087613290CB1830055DCD8 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +88,8 @@
 				010876072904E4C70055DCD8 /* RearCameraView.swift */,
 				010876032904E28F0055DCD8 /* RemoteView.swift */,
 				010876012904DEF90055DCD8 /* RoleSelectionView.swift */,
-				010875FD28FFAB620055DCD8 /* Store.swift */,
+				010875FD28FFAB620055DCD8 /* TransceiverStore.swift */,
+				01087613290CB1830055DCD8 /* Role.swift */,
 			);
 			path = BeSpooky;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				010876022904DEF90055DCD8 /* RoleSelectionView.swift in Sources */,
+				01087614290CB1830055DCD8 /* Role.swift in Sources */,
 				0108760C2904EBDA0055DCD8 /* UIViewConrtoller+Extensions.swift in Sources */,
 				0108760E290508FC0055DCD8 /* UIApplication+Extensions.swift in Sources */,
 				010876042904E28F0055DCD8 /* RemoteView.swift in Sources */,
@@ -204,7 +208,7 @@
 				0108760A2904E6370055DCD8 /* UINavigationController+Extensions.swift in Sources */,
 				010875EC28FFA3150055DCD8 /* ContentView.swift in Sources */,
 				010875EA28FFA3150055DCD8 /* BeSpookyApp.swift in Sources */,
-				010875FE28FFAB620055DCD8 /* Store.swift in Sources */,
+				010875FE28FFAB620055DCD8 /* TransceiverStore.swift in Sources */,
 				0108760029023C740055DCD8 /* CameraCaptureStore.swift in Sources */,
 				010876082904E4C70055DCD8 /* RearCameraView.swift in Sources */,
 				010876062904E4BD0055DCD8 /* FrontPreviewView.swift in Sources */,
@@ -336,11 +340,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BeSpooky/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BeSpooky/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 8SQNZE245D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BeSpooky/Info.plist;
+				INFOPLIST_FILE = BeSpooky/Resources/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Uses the camera for taking pictures and videos.";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Uses the network to communicate with other devices.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -370,11 +374,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BeSpooky/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BeSpooky/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 8SQNZE245D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BeSpooky/Info.plist;
+				INFOPLIST_FILE = BeSpooky/Resources/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Uses the camera for taking pictures and videos.";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Uses the network to communicate with other devices.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

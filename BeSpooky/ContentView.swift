@@ -8,21 +8,21 @@
 import MultipeerKit
 import SwiftUI
 
-struct ContentView: View {
-    @EnvironmentObject var store: Store
-    @State var capture: CameraCaptureStore?
-
-    var body: some View {
-        VStack {
-            if let image = store.image {
-                Image(uiImage: image)
-            }
-            Button(action: {
-                capture = CameraCaptureStore(transceiver: store.transceiver)
-            }) {
-                Text("Capture image")
-            }
-        }
-        .padding()
-    }
-}
+//struct ContentView: View {
+//    @EnvironmentObject var store: Store
+//    @State var capture: CameraCaptureStore?
+//
+//    var body: some View {
+//        VStack {
+//            if let image = store.image {
+//                Image(uiImage: image)
+//            }
+//            Button(action: {
+//                capture = CameraCaptureStore(transceiver: store.transceiver)
+//            }) {
+//                Text("Capture image")
+//            }
+//        }
+//        .padding()
+//    }
+//}

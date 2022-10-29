@@ -23,13 +23,7 @@ struct RoleSelectionView: View {
     }
 }
 
-enum Role: String, CaseIterable, Identifiable {
-    case remote
-    case frontPreview
-    case rearCamera
-
-    var id: String { rawValue }
-
+extension Role {
     var description: String {
         switch self {
         case .remote:
