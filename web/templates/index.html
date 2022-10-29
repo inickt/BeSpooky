@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <title>BeSpooky</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    {% for main, preview in images %}
+    <div class="container">
+        <img src="{{ url_for('static', filename='images/' + main) }}" loading="lazy" class="main">
+
+        <img src="{{ url_for('static', filename='images/' + preview) }}" loading="lazy" class="preview"
+            onclick="
+            let swapsrc = this.src;
+            this.src = this.parentNode.firstElementChild.src;
+            this.parentNode.firstElementChild.src=swapsrc;
+            ">
+    </div>
+    {% endfor %}
+</body>
+
+</html>
