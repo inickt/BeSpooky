@@ -12,15 +12,14 @@ struct RemoteView: View {
 
     @State private var flipped = false
     @State private var leading = true
-
     @State private var previewOffset = CGSize.zero
 
     var body: some View {
-        VStack {
-            ZStack {
-                Color.black
-                    .ignoresSafeArea()
+        ZStack {
+            Color.black
+                .ignoresSafeArea()
 
+            VStack {
                 GeometryReader { geometry in
                     ZStack(alignment: leading ? .topLeading : .topTrailing) {
                         mainView
@@ -54,88 +53,56 @@ struct RemoteView: View {
                                         }
                                     }
                             )
+                        if store.takingPictue {
+                            ProgressView()
+                                .scaleEffect(8)
+                                .frame(width: geometry.size.width, height: geometry.size.height * 0.7, alignment: .center)
+                        }
                     }
                     .clipShape(RoundedRectangle(cornerRadius: 16))
                     .aspectRatio(3/4, contentMode: .fit)
                 }
-            }
-            Button("Take Photo") {
-                store.transceiver.broadcast(TakePicture())
-            }
-            Button("Discard") {
-                store.rearPhoto = nil
-                store.frontPhoto = nil
-            }
 
-            if store.rearPhoto != nil && store.frontPhoto != nil {
-                Button("Upload Pictuere") {
-                    guard let main = store.frontPhoto,
-                          let preview = store.rearPhoto else {
-                        return
+                HStack(spacing: 50) {
+                    Button {
+                        store.clearPhotos()
+                    } label: {
+                        Image(systemName: "multiply.circle")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(.white)
                     }
-
-                    func convertFormField(named name: String, value: String, using boundary: String) -> String {
-                        var fieldString = "--\(boundary)\r\n"
-                        fieldString += "Content-Disposition: form-data; name=\"\(name)\"\r\n"
-                        fieldString += "\r\n"
-                        fieldString += "\(value)\r\n"
-
-                        return fieldString
-                    }
-
-                    func convertFileData(fieldName: String, fileName: String, mimeType: String, fileData: Data, using boundary: String) -> Data {
-                        let data = NSMutableData()
-
-                        data.appendString("--\(boundary)\r\n")
-                        data.appendString("Content-Disposition: form-data; name=\"\(fieldName)\"; filename=\"\(fileName)\"\r\n")
-                        data.appendString("Content-Type: \(mimeType)\r\n\r\n")
-                        data.append(fileData)
-                        data.appendString("\r\n")
-
-                        return data as Data
-                    }
-
-
-                    let boundary = "Boundary-\(UUID().uuidString)"
-
-                    var request = URLRequest(url: URL(string: "https://bespooky.nickt.dev/upload")!)
-                    request.httpMethod = "POST"
-                    request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-
-                    let httpBody = NSMutableData()
-
-
-                    httpBody.append(
-                        convertFileData(
-                            fieldName: "main",
-                            fileName: "main.jpg",
-                            mimeType: "image/jpeg",
-                            fileData: main.jpegData(compressionQuality: 0.9)!,
-                            using: boundary
-                        )
-                    )
-                    httpBody.append(
-                        convertFileData(
-                            fieldName: "preview",
-                            fileName: "preview.jpg",
-                            mimeType: "image/jpeg",
-                            fileData: preview.jpegData(compressionQuality: 0.9)!,
-                            using: boundary
-                        )
+                    .opacity(
+                        (store.readyForUpload || store.takingPictue) ? 1 : 0
                     )
 
-                    httpBody.appendString("--\(boundary)--")
+                    Button(action: {
+                        store.takePicture()
+                    }) {
+                        Color.black
+                            .frame(width: 150, height: 150)
+                            .overlay(
+                                Circle().stroke(.white, lineWidth: 5)
+                            )
+                    }
+                    .opacity(
+                        (store.rearPhoto != nil && store.frontPhoto != nil) ? 0 : 1
+                    )
 
-                    request.httpBody = httpBody as Data
-
-                    URLSession.shared.dataTask(with: request, completionHandler: { _, _, _ in
-                        print("completed upload")
-                    }).resume()
-
-                }
+                    Button {
+                        store.upload()
+                    } label: {
+                        Image(systemName: "paperplane.fill")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(.white)
+                    }
+                    .opacity(
+                        (store.readyForUpload) ? 1 : 0
+                    )
+                }.padding()
             }
         }
-
         .navigationBarHidden(true)
     }
 
@@ -176,10 +143,3 @@ struct RemoteView: View {
     }
 }
 
-extension NSMutableData {
-    func appendString(_ string: String) {
-        if let data = string.data(using: .utf8) {
-            self.append(data)
-        }
-    }
-}

@@ -13,6 +13,7 @@ class CameraCaptureStore: NSObject, ObservableObject {
     private let source: Source
 
     @Published private(set) var rearImage: UIImage?
+    @Published private(set) var showPictureSpinner = false
 
     let sessionPreset: AVCaptureSession.Preset
 
@@ -31,6 +32,7 @@ class CameraCaptureStore: NSObject, ObservableObject {
         }
         transceiver.receive(TakePicture.self) { [weak self] _, _ in
             guard let self = self else { return }
+            self.showPictureSpinner = true
             self.takingPicture = true
             self.captureSession.sessionPreset = .photo
             DispatchQueue.main.asyncAfter(deadline: self.source == .rear ? .now() + 2.5 : .now() + 0.1) {
@@ -45,6 +47,9 @@ class CameraCaptureStore: NSObject, ObservableObject {
 
                 self.photoDataOutput.capturePhoto(with: settings, delegate: self)
             }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
+                self.showPictureSpinner = false
+            }
         }
         return transceiver
     }()
@@ -53,7 +58,7 @@ class CameraCaptureStore: NSObject, ObservableObject {
     private let videoDataOutput = AVCaptureVideoDataOutput()
     private let videoDataOutputQueue = DispatchQueue(label: "dev.nickt.BeSpooky.CameraCaptureStore")
     private let photoDataOutput = AVCapturePhotoOutput()
-    private var throttle = true
+    private var throttle = 10
     private var takingPicture = false
 
     init(source: Source) {
@@ -70,6 +75,9 @@ class CameraCaptureStore: NSObject, ObservableObject {
         captureSession.sessionPreset = sessionPreset
         guard let videoDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: source == .front ? .front : .back) else { return }
         do {
+            if videoDevice.isLowLightBoostSupported {
+                videoDevice.automaticallyEnablesLowLightBoostWhenAvailable = true
+            }
             let videoDeviceInput = try AVCaptureDeviceInput(device: videoDevice)
             captureSession.addInput(videoDeviceInput)
             captureSession.addOutput(videoDataOutput)
@@ -91,8 +99,9 @@ class CameraCaptureStore: NSObject, ObservableObject {
 
 extension CameraCaptureStore: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        throttle.toggle()
-        guard throttle, !takingPicture else { return }
+        throttle += 1
+        guard throttle >= 2 , !takingPicture else { return }
+        throttle = 0
 
         guard let cvImageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         let ciImage = CIImage(cvImageBuffer: cvImageBuffer)

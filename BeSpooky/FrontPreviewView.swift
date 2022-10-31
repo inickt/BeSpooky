@@ -19,6 +19,11 @@ struct FrontPreviewView: View {
                 .rotationEffect(.degrees(180))
                 .cornerRadius(38.5) // Match iPhone X screen corner radius
                 .ignoresSafeArea(edges: [.leading, .bottom, .trailing])
+
+            if store.showPictureSpinner {
+                ProgressView()
+                    .scaleEffect(8)
+            }
         }
         .navigationBarHidden(true)
         .statusBar(hidden: true)
